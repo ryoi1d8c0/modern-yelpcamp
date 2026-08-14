@@ -158,7 +158,7 @@ erDiagram
 
 1. Docker化、CI/CD、デプロイ設定
 
-**次の一手**: Phase 2 (3〜6) — Honoプロジェクト作成 → Docker + PostgreSQL → Drizzle導入
+**次の一手**: Phase 2 (4〜6) — ~~Honoプロジェクト作成~~(完了) → ESLint/Prettier設定 → Docker + PostgreSQL → Drizzle導入
 
 ## 7. 決定事項ログ
 
@@ -175,6 +175,7 @@ erDiagram
 | 2026-08-14 | `GET /auth/me`と`POST /auth/logout`をAPIエンドポイントに追加する                                                                 | RefreshTokenテーブル導入に伴いログアウト時のトークン無効化が必須になったため。/auth/meはログイン状態判定の定番エンドポイント                                          |
 | 2026-08-14 | 画像アップロード/削除は`POST /campgrounds/:id/images`・`DELETE /campgrounds/:id/images/:imageId`として専用エンドポイントに分ける | Campground本体の作成/更新APIをJSONのみでシンプルに保つため。multipart処理を画像専用ルートに閉じ込める                                                                 |
 | 2026-08-14 | `GET /campgrounds`にtitle部分一致の`search`クエリパラメータを追加する                                                            | 元のYelpCampと同等のシンプルな検索機能。ページネーションは現時点の規模では過剰と判断し見送り                                                                          |
+| 2026-08-14 | backendを`create-hono` CLI(Node.jsテンプレート、npm)で作成。ポートは8000番に設定 | frontend(Next.js)がデフォルト3000番を使うため、ポート衝突を避けるため |
 
 ## 8. Open Questions
 
